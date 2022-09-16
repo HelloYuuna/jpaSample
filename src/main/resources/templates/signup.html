@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+    <script th:src="@{/js/jquery-3.6.1.js}"></script>
+    <script th:src="@{/js/signup.js}"></script>
+</head>
+<body>
+    <form th:action="@{/member/login}" id="form">
+      <div>
+        <input type="email" name="email" id="email">
+      </div>
+      <div>
+        <input type="password" name="password" id="password">
+      </div>
+      <div>
+        <input type="submit" value="Signup">
+      </div>
+    </form>
+</body>
+</html>
