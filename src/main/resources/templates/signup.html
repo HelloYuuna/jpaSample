@@ -7,15 +7,18 @@
     <script th:src="@{/js/signup.js}"></script>
 </head>
 <body>
-    <form th:action="@{/member/login}" id="form">
+    <div>
+        <span id="idchk-msg"></span>
+    </div>
+    <form id="form" onsubmit="return submitFalse();">
       <div>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
       </div>
       <div>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" minlength="8" maxlength="10" id="password" required>
       </div>
       <div>
-        <input type="submit" value="Signup">
+        <input type="submit" id="submut-button" value="Signup">
       </div>
     </form>
 </body>

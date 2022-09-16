@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Optional;
+
 @Controller
 @Slf4j
 @RequestMapping("/member")
@@ -19,8 +21,13 @@ public class MemberRestController {
     private MemberRepository repository;
 
     @PostMapping("/idcheck")
-    public void idcheck(String email) {
+    public boolean idcheck(String email) {
         log.debug("email: {}", email);
 
+        Optional<Member> member = repository.findById(email);
+        // null인지 아닌지 check
+        log.debug("result: {}", member.isPresent());
+
+        return member.isPresent();
     }
 }
